@@ -72,23 +72,24 @@ The timestamp when the message was produced to the retry topic, in UNIX epoch mi
 how long a message has been queued for retry.
 
 ### Configuration
-Application configuration is controlled via environment variables. Consult the 
-[application.yml](src/main/resources/application.yml) file for a complete list. Further documentation on Kafka properties
-can be found with the Spring Cloud Stream Kafka Binder project. Some important variables are listed below:
+Application configuration is controlled via environment variables. Consult the [keep.env](./keep.env) file for a complete list. Also can use [env.list](./env.list) with docker command with flag `--env-file`. Deployment need to make the copy of `keep.env` to `.env` with production configuration. Some important variables are listed below:
 
-* `KAFKA_RETRY_BOOTSTRAP_SERVERS` - Address for the Kafka bootstrap servers. Default: localhost:9091.
-* `KAFKA_RETRY_STREAMS_APP_ID` - Kafka Streams application ID. Default: "kafka-retry".
-* `KAFKA_RETRY_INPUT_TOPIC` - Input topic for retry messages. Default "retry".
-* `KAFKA_RETRY_RETRIABLE_EXCEPTION` - Retriable exception name.
-* `KAFKA_RETRY_FATAL_EXCEPTION` - Fatal exception name.
-* `KAFKA_RETRY_DROPPABLE_EXCEPTION` - Droppable exception name.
-* `KAFKA_RETRY_DLQ_TOPIC` - DLQ topic name. Default: "dlq".
-* `KAFKA_RETRY_STORE_NAME` - Kafka Streams state store name. Default: "retry-queue".
-* `KAFKA_RETRY_PUNCTUATION_INTERVAL_MS` - Kafka Streams punctuation interval in milliseconds. Controls the cycle time for checking
-and dispatching retriable messages queued for a sufficient period of time. Default: 10000.
-* `KAFKA_RETRY_HTTP_PORT` - HTTP port for incoming requests. A health status endpoint is provided by Spring Actuator at
-`/actuator/health`. Default: 8080.
-* `KAFKA_RETRY_ENABLE_HEALTH` - Enable the Kafka health integration with Spring Actuator. Default: true.
+##### Retry Router config
+* `RETRY_QUEUE_CONFIG` - Configures kafka topic names with their respective delays as a key-value pairs separated by `colon`. Multiple such queues can be configured with different delays separated by `semi-colon`.
+> Example: Two different queues with delays 300 seconds and 900 seconds.
+>```RETRY_QUEUE_CONFIG=retry_topic_5min:300;retry_topic_15min:900```
+
+* `KAFKA_BROKERS_LIST` - List of Kafka brokers separated by `comma`.
+* `PRODUCER_TRANSACTION_ID` - Kafka Retry transaction consumer id.
+* `CONSUMER_GROUP_NAME` - Kafka consumer group name for the Retry Router. Can instantiate multiple instances with same group name.
+* `KAFKA_FALLBACK_TOPIC` - Retry Router routes messages to fallback topic if `final_topic` not found in message header.
+* `NODE_ENV` - could be `prod` or `dev`.
+
+##### Syslog Config
+* `SYSLOG_HOST`
+* `SYSLOG_PORT`
+* `SYSLOG_APPNAME`
+* `SYSLOG_LOCAL_HOSTNAME`
 
 ## Development
 Kafka Retry is written in Java 8. Lombok annotations are used throughout the code. Gradle is the build tool of choice.
