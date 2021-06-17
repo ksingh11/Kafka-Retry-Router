@@ -1,0 +1,11 @@
+**/node_modules
+.env
+**/dist
+**/reference
+**/.vscode
+**/documentation
+.idea
+*.pem
+cert/
+logs/*
+*.log

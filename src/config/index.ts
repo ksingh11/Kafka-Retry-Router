@@ -20,6 +20,13 @@ const config = {
     producerTransactionId: (process.env.PRODUCER_TRANSACTION_ID || "retry-transactional-client").trim(),
     delayTimedeltaSec: parseInt(process.env.DELAY_TIMEDELTA_SEC || "2"),
     fallbackTopic: process.env.KAFKA_FALLBACK_TOPIC
+  },
+
+  syslog: {
+    host: process.env.SYSLOG_HOST || "logs2.papertrailapp.com",
+    port: parseInt(process.env.SYSLOG_PORT || "33333"),
+    appName: process.env.SYSLOG_APPNAME || "kafka-retry",
+    localhost: process.env.SYSLOG_LOCAL_HOSTNAME || "local-docker"
   }
 };
 

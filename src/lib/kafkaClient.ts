@@ -1,9 +1,10 @@
 import {Kafka, logLevel} from "kafkajs";
 import os from "os";
 import config from "../config";
-import { WinstonLogCreator } from "./logger";
+import { logger, WinstonLogCreator } from "./logger";
 
 const clientId = os.hostname();
+logger.info(`Brokers: ${JSON.stringify(config.kafka.host)}, Client: ${clientId}`);
 
 /**
  * Configure Kafka client

@@ -1,0 +1,24 @@
+{"message":"Brokers: [\"localhost:9092\"], Client: docker-desktop","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.577Z"}
+{"message":"[ADMIN] Kafka admin connected","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.643Z"}
+{"message":"[ADMIN] Kafka topics: Already Exists","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.686Z"}
+{"message":"Consumer Group: retry-router-group","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.714Z"}
+{"message":"Transaction Id: retry-transactional-client ","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.715Z"}
+{"message":"Subscribing for topics: retry1,retry2} ","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.715Z"}
+{"message":"Subscribed topic: retry1","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.723Z"}
+{"message":"Subscribed topic: retry2","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:30:01.729Z"}
+{"message":"Brokers: [\"localhost:9092\"], Client: docker-desktop","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:40.845Z"}
+{"message":"[ADMIN] Kafka admin connected","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:40.927Z"}
+{"message":"[ADMIN] Kafka topics: Already Exists","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:40.985Z"}
+{"message":"Consumer Group: retry-router-group","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:41.025Z"}
+{"message":"Transaction Id: retry-transactional-client ","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:41.026Z"}
+{"message":"Subscribing for topics: retry1,retry2} ","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:41.027Z"}
+{"message":"Subscribed topic: retry1","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:41.034Z"}
+{"message":"Subscribed topic: retry2","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:41:41.041Z"}
+{"message":"Brokers: [\"localhost:9092\"], Client: docker-desktop","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.170Z"}
+{"message":"[ADMIN] Kafka admin connected","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.234Z"}
+{"message":"[ADMIN] Kafka topics: Already Exists","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.282Z"}
+{"message":"Consumer Group: retry-router-group","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.311Z"}
+{"message":"Transaction Id: retry-transactional-client ","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.312Z"}
+{"message":"Subscribing for topics: retry1,retry2} ","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.313Z"}
+{"message":"Subscribed topic: retry1","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.321Z"}
+{"message":"Subscribed topic: retry2","level":"info","host":"docker-desktop","timestamp":"2021-06-17T14:44:12.329Z"}

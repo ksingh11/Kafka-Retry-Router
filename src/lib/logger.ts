@@ -10,10 +10,10 @@ require('winston-syslog').Syslog;
 const hostName = os.hostname();
 const level = process.env.LOG_LEVEL || 'info';
 const syslogOptions = {
-    host: "logs2.papertrailapp.com",
-    port: 33292,
-    app_name: "hdl-be",
-    localhost: hostName
+    host: config.syslog.host,
+    port: config.syslog.port,
+    app_name: config.syslog.appName,
+    localhost: config.syslog.localhost
 };
 const errorStackFormat = format(info => {
     if (info instanceof Error) {
@@ -55,7 +55,6 @@ if (config.env === 'prod') {
     } catch (e) {
         console.log("Papertrails init failed.")
     }
-
 } else {
     logger.add(
         new transports.Console({
@@ -68,17 +67,15 @@ if (config.env === 'prod') {
     );
 }
 
-//Kafka JS log config
+//KafkaJS log config (external log interface)
 const WinstonLogCreator = logLevel => {
     const logger = createLogger({
         level: 'debug',
         transports: [
-            new transports.Console(),
-            // new transports.File({ filename: 'myapp.log' })
+            new transports.Console()
         ],
         format: combine(timestamp(),format.json(),errorStackFormat())
     })
-
     return ({ namespace, level, label, log }) => {
         const { message, ...extra } = log
         logger.log({

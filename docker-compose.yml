@@ -1,0 +1,11 @@
+version: "3.2"
+services:
+  kafka-retry:
+    container_name: "kafka-retry"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./logs:/usr/src/app/logs
+      - ./.env:/usr/src/app/.env
+    network_mode: host
